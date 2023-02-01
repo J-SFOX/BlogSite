@@ -1,0 +1,30 @@
+{
+  "name": "blogsite",
+  "version": "1.0.0",
+  "description": "blogwebapplication",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J-SFOX/BlogSite.git"
+  },
+  "author": "JEMMAL Soufiane - SFOX",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J-SFOX/BlogSite/issues"
+  },
+  "homepage": "https://github.com/J-SFOX/BlogSite#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.9.0",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1"
+  }
+}
