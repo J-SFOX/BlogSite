@@ -1,0 +1,33 @@
+   <!-- create container  -->
+   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createBlog">
+     Create new blog
+   </button>
+
+   <!-- Modal -->
+   <div class="modal fade" id="createBlog" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createBlogLabel"
+     aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h1 class="modal-title fs-5" id="createBlogLabel">Create a new Blog</h1>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <form class="modal-body">
+           <div class="mb-3">
+             <label for="" class="d-inline-block mr-2">Title </label>
+             <input type="text" class="form-control" name="title" [(ngModel)]="title" id="title">
+           </div>
+           <div class="mb-3">
+             <label for="" class="form-label">Content</label>
+             <textarea class="form-control" name="content" id="content" [(ngModel)]="content" rows="10">
+
+            </textarea>
+           </div>
+           <div class="w-100"> 
+             <button class="btn btn-primary mx-auto " (click)="createBlog()" >Create</button>
+           </div>
+         </form>
+
+       </div>
+     </div>
+   </div>

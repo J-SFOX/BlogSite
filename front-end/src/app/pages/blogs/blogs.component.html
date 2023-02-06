@@ -1,0 +1,11 @@
+<div class=" container w-75 ">
+  <h2> Blogs : </h2>
+  <div *ngIf="blogs" class="container w-75">
+    <div *ngFor="let blog of blogs">
+      <div class="border mb-3">
+        <h3> {{ blog.title }} </h3>
+        <p> {{blog.content}} </p>
+      </div>
+    </div>
+  </div>
+</div>

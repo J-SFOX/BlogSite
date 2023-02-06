@@ -1,0 +1,63 @@
+<div class="container">
+   <!-- create container  -->
+   <app-createblog (refreshRows)="refresh($event)"></app-createblog>
+   <!-- List of blogs container  -->
+   <div class=" mt-4">
+      <div *ngIf="userBlogs" class="table-responsive">
+         <table class="table table-dark table-striped">
+            <thead>
+               <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Content</th>
+                  <th scope="col">Actions</th>
+               </tr>
+            </thead>
+            <tbody *ngFor="let blog of userBlogs">
+               <tr class="">
+                  <td scope="row">{{blog.title}}</td>
+                  <td>{{blog.content}}</td>
+                  <td colspan="3">
+                     <div class="d-flex justify-content-between w-100">
+                        <button class="btn btn-success"type="button" data-bs-toggle="modal" data-bs-target="#UpdateBlog" (click)="setUpdatedBlog(blog)">Update</button>
+                        <button class="btn btn-danger" (click)="deleteBlog(blog._id)">Delete</button>
+                     </div>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      
+
+   </div>
+
+ 
+    <!-- Modal -->
+    <div class="modal fade" id="UpdateBlog" data-bs-keyboard="false" tabindex="-1" aria-labelledby="UpdateBlogLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="UpdateBlogLabel">Update Blog</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="modal-body">
+            <div class="mb-3">
+              <label for="" class="d-inline-block mr-2">Title </label>
+              <input type="text" class="form-control" [value]="updatedBlog.title" name="title" [(ngModel)]="updatedBlog.title" id="title">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Content</label>
+              <textarea class="form-control" name="content" [value]="updatedBlog.content" id="content" [(ngModel)]="updatedBlog.content" rows="10">
+ 
+             </textarea>
+            </div>
+            <div class="w-100"> 
+              <button class="btn btn-primary mx-auto "(click)="updateBlog()" >Update</button>
+            </div>
+          </form>
+ 
+        </div>
+      </div>
+    </div>
+ 
+</div>
