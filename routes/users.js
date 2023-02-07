@@ -9,7 +9,7 @@ const router = express.Router()
 const env = process.env
 
 router.post('/register', (req, res, next) => {
-    let newUser = new User({
+    const newUser = new User({
         fullname: req.body.username,
         email: req.body.email,
         username: req.body.username,
